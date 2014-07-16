@@ -1,0 +1,25 @@
+{
+	"name" : "melody/user",
+	"type" : "symfony-bundle",
+	"description" : "Melody user bundle",
+	"require" : {
+		"friendsofsymfony/user-bundle" : "~2.0@dev",
+		"hwi/oauth-bundle" : "0.4.*@dev",
+		"melody/model": "dev-master",
+		"php" : ">=5.3.3"
+	},
+	"require-dev" : {
+		"phpunit/PHPUnit" : "3.7.*"
+	},
+	"suggest" : {
+		"doctrine/doctrine-bundle" : "~1.2",
+		"propel/propel-bundle" : "1.4.*@dev"
+	},
+	"autoload" : {
+		"psr-0" : {
+			"Melody\\UserBundle" : ""
+		}
+	},
+	"target-dir" : "Melody/UserBundle",
+	"minimum-stability" : "dev"
+}

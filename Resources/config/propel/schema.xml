@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="default" namespace="Melody\UserBundle\Model" defaultIdMethod="native">
+	<table name="person" description="">
+		<column name="id" type="integer" required="1" primaryKey="1"/>
+		<foreign-key foreignTable="fos_user" onDelete="cascade">
+			<reference local="id" foreign="id"/>
+		</foreign-key>
+		<column name="given_name" type="varchar" size="100"/>
+		<column name="family_name" type="varchar" size="100"/>
+		<column name="gender" type="varchar" size="5"/>
+		<column name="address" type="longvarchar"/>
+		<column name="postal_code" type="varchar" size="20"/>
+		<column name="city" type="varchar" size="100"/>
+		<column name="country" type="varchar" size="5"/>
+		<column name="birth_date" type="timestamp"/>
+		<column name="telephone" type="varchar" size="20"/>
+		<column name="fax" type="varchar" size="20"/>
+		<column name="opt_in" type="boolean"/>
+		<column name="google" type="varchar" size="50"/>
+		<unique><unique-column name="google"/></unique>
+		<column name="facebook" type="varchar" size="50"/>
+		<unique><unique-column name="facebook"/></unique>
+		<column name="created_at" type="timestamp"/>
+		<column name="updated_at" type="timestamp"/>
+		<behavior name="geocodable">
+			<parameter name="geocode_address" value="1"/>
+			<parameter name="address_columns" value="address,postal_code,city,country"/>
+		</behavior>
+		<behavior name="class_table_inheritance">
+			<parameter name="extends" value="fos_user"/>
+		</behavior>
+	</table>
+	<table name="organization" description="">
+		<column name="id" type="integer" required="1" primaryKey="1"/>
+		<foreign-key foreignTable="fos_group" onDelete="cascade">
+			<reference local="id" foreign="id"/>
+		</foreign-key>
+		<column name="name" type="varchar" size="255"/>
+		<column name="created_at" type="timestamp"/>
+		<column name="updated_at" type="timestamp"/>
+		<column name="tree_left" type="integer"/>
+		<column name="tree_right" type="integer"/>
+		<column name="tree_level" type="integer"/>
+		<behavior name="nested_set">
+			<parameter name="left_column" value="tree_left"/>
+			<parameter name="right_column" value="tree_right"/>
+			<parameter name="level_column" value="tree_level"/>
+		</behavior>
+		<behavior name="class_table_inheritance">
+			<parameter name="extends" value="fos_group"/>
+		</behavior>
+	</table>
+	<table name="role" description="">
+		<column name="id" type="integer" required="1" primaryKey="1" autoIncrement="1"/>
+		<column name="name" type="varchar" size="255"/>
+		<column name="created_at" type="timestamp"/>
+		<column name="updated_at" type="timestamp"/>
+	</table>
+	<table name="organization_person" isCrossRef="1" phpName="OrganizationPerson">
+		<column name="id" type="integer" required="1" primaryKey="1" autoIncrement="1"/>
+		<column name="person_id" type="integer" required="1"/>
+		<foreign-key foreignTable="person" onDelete="cascade">
+			<reference local="person_id" foreign="id"/>
+		</foreign-key>
+		<column name="organization_id" type="integer" required="1"/>
+		<foreign-key foreignTable="organization" onDelete="cascade">
+			<reference local="organization_id" foreign="id"/>
+		</foreign-key>
+	</table>
+</database>
