@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Person
  */
-class Person extends \FOS\UserBundle\Entity\User
+class Person extends \FOS\UserBundle\Model\User
 {
     /**
      * @var string

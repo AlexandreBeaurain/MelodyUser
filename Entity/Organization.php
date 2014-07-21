@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Organization
  */
-class Organization extends \FOS\UserBundle\Entity\Group
+class Organization extends \FOS\UserBundle\Model\Group
 {
     /**
      * @var \DateTime

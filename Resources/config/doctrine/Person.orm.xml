@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gedmo="http://gediminasm.org/schemas/orm/doctrine-extensions-mapping" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 	<entity name="Melody\UserBundle\Entity\Person" table="person" description="" inheritance-type="JOINED">
-		<id name="id" type="integer" required="1" primaryKey="1"/>
-		<field name="given_name" type="string" size="100"/>
-		<field name="family_name" type="string" size="100"/>
-		<field name="gender" type="string" size="5"/>
-		<field name="address" type="string" size="2048"/>
-		<field name="postal_code" type="string" size="20"/>
-		<field name="city" type="string" size="100"/>
-		<field name="country" type="string" size="5"/>
-		<field name="birth_date" type="datetime"/>
-		<field name="telephone" type="string" size="20"/>
-		<field name="fax" type="string" size="20"/>
-		<field name="opt_in" type="boolean"/>
-		<field name="google" type="string" size="50"/>
+		<id name="id" type="integer" required="1" primaryKey="1" nullable="true">
+			<generator strategy="AUTO"/>
+		</id>
+		<field name="given_name" type="string" size="100" nullable="true"/>
+		<field name="family_name" type="string" size="100" nullable="true"/>
+		<field name="gender" type="string" size="5" nullable="true"/>
+		<field name="address" type="string" size="2048" nullable="true"/>
+		<field name="postal_code" type="string" size="20" nullable="true"/>
+		<field name="city" type="string" size="100" nullable="true"/>
+		<field name="country" type="string" size="5" nullable="true"/>
+		<field name="birth_date" type="datetime" nullable="true"/>
+		<field name="telephone" type="string" size="20" nullable="true"/>
+		<field name="fax" type="string" size="20" nullable="true"/>
+		<field name="opt_in" type="boolean" nullable="true"/>
+		<field name="google" type="string" size="50" nullable="true"/>
 		<unique-constraints>
 			<unique-constraint columns="google"/>
 			<unique-constraint columns="facebook"/></unique-constraints>
-		<field name="facebook" type="string" size="50"/>
-		<field name="created_at" type="datetime">
+		<field name="facebook" type="string" size="50" nullable="true"/>
+		<field name="created_at" type="datetime" nullable="true">
 			<gedmo:timestampable on="create"/>
 		</field>
-		<field name="updated_at" type="datetime">
+		<field name="updated_at" type="datetime" nullable="true">
 			<gedmo:timestampable on="update"/>
 		</field>
 	</entity>
