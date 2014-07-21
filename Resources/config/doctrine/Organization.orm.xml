@@ -5,7 +5,6 @@
 		<one-to-many field="Group" target-entity="FOS\UserBundle\Entity\Group">
 			<join-column name="id" referenced-column-name="id" on-delete="cascade"/>
 		</one-to-many>
-		<field name="name" type="string" size="255"/>
 		<field name="created_at" type="datetime">
 			<gedmo:timestampable on="create"/>
 		</field>

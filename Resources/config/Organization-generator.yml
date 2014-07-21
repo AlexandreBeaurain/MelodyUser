@@ -1,9 +1,9 @@
-generator: admingenerator.generator.propel
+generator: admingenerator.generator.doctrine
 params:
-    model: Melody\UserBundle\Model\Organization
-    namespace_prefix: Melody
+    model: Melody\UserBundle\Entity\Organization
+    namespace_prefix: Melody\UserBundle
     concurrency_lock: ~
-    bundle_name: UserBundle
+    bundle_name: MelodyUserBundle
     pk_requirement: ~
     fields: ~
     object_actions:
