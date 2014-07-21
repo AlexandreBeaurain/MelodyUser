@@ -12,36 +12,28 @@ class OrganizationPerson
     /**
      * @var integer
      */
-    protected $person_id;
+    private $person_id;
 
     /**
      * @var integer
      */
-    protected $organization_id;
+    private $organization_id;
 
     /**
      * @var integer
      */
-    protected $id;
+    private $id;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var \Melody\UserBundle\Entity\person
      */
-    protected $person;
+    private $person;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var \Melody\UserBundle\Entity\organization
      */
-    protected $organization;
+    private $organization;
 
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->person = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->organization = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Set person_id
@@ -100,32 +92,22 @@ class OrganizationPerson
     }
 
     /**
-     * Add person
+     * Set person
      *
      * @param \Melody\UserBundle\Entity\person $person
      * @return OrganizationPerson
      */
-    public function addPerson(\Melody\UserBundle\Entity\person $person)
+    public function setPerson(\Melody\UserBundle\Entity\person $person = null)
     {
-        $this->person[] = $person;
+        $this->person = $person;
 
         return $this;
     }
 
     /**
-     * Remove person
-     *
-     * @param \Melody\UserBundle\Entity\person $person
-     */
-    public function removePerson(\Melody\UserBundle\Entity\person $person)
-    {
-        $this->person->removeElement($person);
-    }
-
-    /**
      * Get person
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Melody\UserBundle\Entity\person 
      */
     public function getPerson()
     {
@@ -133,32 +115,22 @@ class OrganizationPerson
     }
 
     /**
-     * Add organization
+     * Set organization
      *
      * @param \Melody\UserBundle\Entity\organization $organization
      * @return OrganizationPerson
      */
-    public function addOrganization(\Melody\UserBundle\Entity\organization $organization)
+    public function setOrganization(\Melody\UserBundle\Entity\organization $organization = null)
     {
-        $this->organization[] = $organization;
+        $this->organization = $organization;
 
         return $this;
     }
 
     /**
-     * Remove organization
-     *
-     * @param \Melody\UserBundle\Entity\organization $organization
-     */
-    public function removeOrganization(\Melody\UserBundle\Entity\organization $organization)
-    {
-        $this->organization->removeElement($organization);
-    }
-
-    /**
      * Get organization
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Melody\UserBundle\Entity\organization 
      */
     public function getOrganization()
     {

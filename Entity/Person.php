@@ -89,18 +89,6 @@ class Person extends \FOS\UserBundle\Entity\User
      */
     protected $id;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    protected $User;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->User = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Set given_name
@@ -468,38 +456,5 @@ class Person extends \FOS\UserBundle\Entity\User
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Add User
-     *
-     * @param \FOS\UserBundle\Entity\User $user
-     * @return Person
-     */
-    public function addUser(\FOS\UserBundle\Entity\User $user)
-    {
-        $this->User[] = $user;
-
-        return $this;
-    }
-
-    /**
-     * Remove User
-     *
-     * @param \FOS\UserBundle\Entity\User $user
-     */
-    public function removeUser(\FOS\UserBundle\Entity\User $user)
-    {
-        $this->User->removeElement($user);
-    }
-
-    /**
-     * Get User
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getUser()
-    {
-        return $this->User;
     }
 }

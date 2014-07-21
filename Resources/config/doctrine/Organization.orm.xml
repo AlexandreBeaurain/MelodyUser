@@ -2,9 +2,6 @@
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gedmo="http://gediminasm.org/schemas/orm/doctrine-extensions-mapping" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 	<entity name="Melody\UserBundle\Entity\Organization" table="organization" description="" inheritance-type="JOINED">
 		<id name="id" type="integer" required="1" primaryKey="1"/>
-		<one-to-many field="Group" target-entity="FOS\UserBundle\Entity\Group">
-			<join-column name="id" referenced-column-name="id" on-delete="cascade"/>
-		</one-to-many>
 		<field name="created_at" type="datetime">
 			<gedmo:timestampable on="create"/>
 		</field>

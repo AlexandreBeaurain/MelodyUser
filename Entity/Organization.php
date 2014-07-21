@@ -9,7 +9,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Organization extends \FOS\UserBundle\Entity\Group
 {
-
     /**
      * @var \DateTime
      */
@@ -40,41 +39,6 @@ class Organization extends \FOS\UserBundle\Entity\Group
      */
     protected $id;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    protected $Group;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->Group = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return Organization
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string 
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
 
     /**
      * Set created_at
@@ -212,38 +176,5 @@ class Organization extends \FOS\UserBundle\Entity\Group
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Add Group
-     *
-     * @param \FOS\UserBundle\Entity\Group $group
-     * @return Organization
-     */
-    public function addGroup(\FOS\UserBundle\Entity\Group $group)
-    {
-        $this->Group[] = $group;
-
-        return $this;
-    }
-
-    /**
-     * Remove Group
-     *
-     * @param \FOS\UserBundle\Entity\Group $group
-     */
-    public function removeGroup(\FOS\UserBundle\Entity\Group $group)
-    {
-        $this->Group->removeElement($group);
-    }
-
-    /**
-     * Get Group
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getGroup()
-    {
-        return $this->Group;
     }
 }
