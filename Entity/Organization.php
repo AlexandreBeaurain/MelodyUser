@@ -177,4 +177,49 @@ class Organization extends \FOS\UserBundle\Model\Group
     {
         return $this->id;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $people;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->people = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add people
+     *
+     * @param \Melody\UserBundle\Entity\Person $people
+     * @return Organization
+     */
+    public function addPerson(\Melody\UserBundle\Entity\Person $people)
+    {
+        $this->people[] = $people;
+
+        return $this;
+    }
+
+    /**
+     * Remove people
+     *
+     * @param \Melody\UserBundle\Entity\Person $people
+     */
+    public function removePerson(\Melody\UserBundle\Entity\Person $people)
+    {
+        $this->people->removeElement($people);
+    }
+
+    /**
+     * Get people
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPeople()
+    {
+        return $this->people;
+    }
 }

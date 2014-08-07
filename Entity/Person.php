@@ -457,4 +457,49 @@ class Person extends \FOS\UserBundle\Model\User
     {
         return $this->id;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $organizations;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->organizations = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add organizations
+     *
+     * @param \Melody\UserBundle\Entity\Organization $organizations
+     * @return Person
+     */
+    public function addOrganization(\Melody\UserBundle\Entity\Organization $organizations)
+    {
+        $this->organizations[] = $organizations;
+
+        return $this;
+    }
+
+    /**
+     * Remove organizations
+     *
+     * @param \Melody\UserBundle\Entity\Organization $organizations
+     */
+    public function removeOrganization(\Melody\UserBundle\Entity\Organization $organizations)
+    {
+        $this->organizations->removeElement($organizations);
+    }
+
+    /**
+     * Get organizations
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getOrganizations()
+    {
+        return $this->organizations;
+    }
 }
