@@ -4,7 +4,7 @@
 	"description" : "Melody user bundle",
 	"require" : {
 		"cedriclombardot/admingenerator-generator-bundle" : "1.2.*@dev",
-		"friendsofsymfony/user-bundle" : "~2.0@dev",
+		"friendsofsymfony/user-bundle": "2.0.*@dev",
 		"hwi/oauth-bundle" : "0.4.*@dev",
 		"melody/model" : "dev-master",
 		"php" : ">=5.3.3"

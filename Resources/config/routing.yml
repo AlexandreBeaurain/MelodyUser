@@ -41,5 +41,5 @@ hwi_oauth_connect:
     resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
     prefix:   /account/connect
 
-hwi_github_login:
+hwi_google_login:
     pattern: /account/login/check-google
