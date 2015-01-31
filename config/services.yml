@@ -1,0 +1,5 @@
+# FosUser Configuration
+fos_user:
+    db_driver:     "%orm_fos%"
+    firewall_name: main
+    user_class:    Melody\UserBundle\%orm_directory%\Person
