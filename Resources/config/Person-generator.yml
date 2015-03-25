@@ -4,19 +4,16 @@ params:
     namespace_prefix: Melody\UserBundle
     concurrency_lock: ~
     bundle_name: MelodyUserBundle
-    pk_requirement: ~
+    pk_requirement: \d+
     fields: ~
-    object_actions:
-        delete: ~
-    batch_actions:
-        delete: ~
+    object_actions: ~
+    batch_actions: ~
 builders:
     list:
         params:
             title: List for person
             display: [given_name,family_name,email,enabled]
-            actions:
-                new: ~
+            actions: ~
             object_actions:
                 edit: ~
                 delete: ~
@@ -26,7 +23,7 @@ builders:
         filetype: ~
     filters:
         params:
-            display: ~
+            display: [given_name,family_name,email,enabled]
     new:
         params:
             title: New object for person
