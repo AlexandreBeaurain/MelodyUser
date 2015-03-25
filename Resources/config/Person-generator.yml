@@ -14,7 +14,7 @@ builders:
     list:
         params:
             title: List for person
-            display: ~
+            display: [given_name,family_name,email,enabled]
             actions:
                 new: ~
             object_actions:
@@ -30,21 +30,21 @@ builders:
     new:
         params:
             title: New object for person
-            display: ~
+            display: [username,email,enabled,plainPassword,given_name,family_name,gender,address,postal_code,city,country,birth_date,telephone,fax]
             actions:
                 save: ~
                 list: ~
     edit:
         params:
             title: "You're editing the object \"%object%\"|{ %object%: Person.title }|"
-            display: ~
+            display: [username,email,enabled,plainPassword,given_name,family_name,gender,address,postal_code,city,country,birth_date,telephone,fax]
             actions:
                 save: ~
                 list: ~
     show:
         params:
             title: "You're viewing the object \"%object%\"|{ %object%: Person.title }|"
-            display: ~
+            display: [username,email,enabled,given_name,family_name,gender,address,postal_code,city,country,birth_date,telephone,fax]
             actions:
                 list: ~
                 new: ~
