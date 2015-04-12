@@ -18,7 +18,8 @@ builders:
                 edit: ~
                 delete: ~
     excel:
-        params: ~
+        params:
+            display: [given_name,family_name,email,enabled]
         filename: ~
         filetype: ~
     filters:

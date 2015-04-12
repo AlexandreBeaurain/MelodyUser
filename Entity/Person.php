@@ -89,11 +89,6 @@ class Person extends \FOS\UserBundle\Model\User
      */
     protected $id;
 
-    /**
-     * @var array
-     */
-    protected $roles;
-
 
     /**
      * Set given_name
@@ -394,30 +389,6 @@ class Person extends \FOS\UserBundle\Model\User
         return $this->facebook;
     }
 
-
-    /**
-     * Set roles
-     *
-     * @param array $roles
-     * @return Person
-     */
-    public function setRoles(array $roles)
-    {
-        $this->roles = $roles;
-
-        return $this;
-    }
-
-    /**
-     * Get roles
-     *
-     * @return array
-     */
-    public function getRoles()
-    {
-        return $this->roles;
-    }
-
     /**
      * Set created_at
      *
@@ -496,6 +467,7 @@ class Person extends \FOS\UserBundle\Model\User
      */
     public function __construct()
     {
+        parent::__construct();
         $this->organizations = new \Doctrine\Common\Collections\ArrayCollection();
     }
 

@@ -187,6 +187,7 @@ class Organization extends \FOS\UserBundle\Model\Group
      */
     public function __construct()
     {
+        parent::__construct();
         $this->people = new \Doctrine\Common\Collections\ArrayCollection();
     }
 

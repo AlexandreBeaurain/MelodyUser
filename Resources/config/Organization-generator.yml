@@ -23,14 +23,15 @@ builders:
     list:
         params:
             title: List for organization
-            display: ~
+            display: [name]
             actions:
                 new: ~
             object_actions:
                 edit: ~
                 delete: ~
     excel:
-        params: ~
+        params:
+            display: [name]
         filename: ~
         filetype: ~
     filters:
@@ -39,14 +40,14 @@ builders:
     new:
         params:
             title: New object for organization
-            display: ~
+            display: [name]
             actions:
                 save: ~
                 list: ~
     edit:
         params:
             title: "You're editing the object \"%object%\"|{ %object%: Organization.title }|"
-            display: ~
+            display: [name]
             actions:
                 save: ~
                 list: ~
