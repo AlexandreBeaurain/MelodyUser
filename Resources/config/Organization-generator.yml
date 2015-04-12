@@ -4,7 +4,7 @@ params:
     namespace_prefix: Melody\UserBundle
     concurrency_lock: ~
     bundle_name: MelodyUserBundle
-    pk_requirement: ~
+    pk_requirement: \d+
     fields: ~
     object_actions:
         delete: ~
@@ -14,7 +14,7 @@ builders:
     nested_list:
         params:
             title: List for organization
-            display: ~
+            display: [name]
             actions:
                 new: ~
             object_actions:
@@ -36,7 +36,7 @@ builders:
         filetype: ~
     filters:
         params:
-            display: ~
+            display: [name]
     new:
         params:
             title: New object for organization
@@ -54,7 +54,7 @@ builders:
     show:
         params:
             title: "You're viewing the object \"%object%\"|{ %object%: Organization.title }|"
-            display: ~
+            display: [name]
             actions:
                 list: ~
                 new: ~
