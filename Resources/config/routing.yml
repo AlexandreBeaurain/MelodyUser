@@ -1,12 +1,12 @@
-person:
-    resource: "@MelodyUserBundle/Controller/Person/"
-    type:     admingenerator
-    prefix:   /admin/person
+#person:
+#    resource: "@MelodyUserBundle/Controller/Person/"
+#    type:     admingenerator
+#    prefix:   /admin/person
 
-organization:
-    resource: "@MelodyUserBundle/Controller/Organization/"
-    type:     admingenerator_nested
-    prefix:   /admin/organization
+#organization:
+#    resource: "@MelodyUserBundle/Controller/Organization/"
+#    type:     admingenerator_nested
+#    prefix:   /admin/organization
 
 # fosuser 
 fos_user_security:
