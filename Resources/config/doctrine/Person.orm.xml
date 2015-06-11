@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gedmo="http://gediminasm.org/schemas/orm/doctrine-extensions-mapping" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 	<entity name="Melody\UserBundle\Entity\Person" table="person" description="" inheritance-type="JOINED">
-		<id name="id" type="integer" required="1" primaryKey="1" nullable="true"/>
+		<id name="id" type="integer" required="1" primaryKey="1" nullable="true">
+			<generator strategy="AUTO" />
+		</id>
 		<field name="given_name" type="string" size="100" nullable="true"/>
 		<field name="family_name" type="string" size="100" nullable="true"/>
 		<field name="gender" type="string" size="5" nullable="true"/>
