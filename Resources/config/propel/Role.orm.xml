@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gedmo="http://gediminasm.org/schemas/orm/doctrine-extensions-mapping" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	<entity name="Melody\UserBundle\Entity\Role" table="role" description="">
+		<id name="id" type="integer" required="1" primaryKey="1" nullable="true">
+			<generator strategy="AUTO"/>
+		</id>
+		<field name="name" type="string" size="255" nullable="true"/>
+		<field name="created_at" type="datetime" nullable="true">
+			<gedmo:timestampable on="create"/>
+		</field>
+		<field name="updated_at" type="datetime" nullable="true">
+			<gedmo:timestampable on="update"/>
+		</field>
+	</entity>
+</doctrine-mapping>
